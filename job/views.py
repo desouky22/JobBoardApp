@@ -3,8 +3,11 @@ from .models import Job, Category
 
 
 def job_list(request, *args, **kwargs):
-    queryset = Job.objects.all()
-    context = {"jobs": list(queryset)}
+    queryset = list(Job.objects.all())
+    context = {
+        "jobs": queryset,
+        "number_of_jobs": len(queryset),
+    }
     return render(request, "job/job_list.html", context)
 
 
