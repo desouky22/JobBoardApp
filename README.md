@@ -1,2 +1,2 @@
 # JobBoardApp
-A simple app using html css js , Django
+A simple app using Frontend(html, css, js) , Backend(Django)
