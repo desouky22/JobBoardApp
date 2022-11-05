@@ -1,6 +1,11 @@
 from django.db import models
 
 
+def image_upload(instance, filename):
+    image_name, extension = filename.split(".")
+    return f"jobs/{instance.id}.{extension}"
+
+
 class Job(models.Model):
     JOB_TYPE = (
         ("Full Time", "Full Time"),
@@ -18,6 +23,7 @@ class Job(models.Model):
     category = models.ForeignKey(
         "Category", on_delete=models.CASCADE, related_name="jobs"
     )
+    image = models.ImageField(upload_to=image_upload)
 
     def __str__(self):
         return f"{self.title}"
