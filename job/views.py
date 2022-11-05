@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+def job_list(request, *args, **kwargs):
+    pass
+
+
+def job_detail(request, *args, **kwargs):
+    pass
+
